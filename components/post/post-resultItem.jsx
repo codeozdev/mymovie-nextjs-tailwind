@@ -22,7 +22,7 @@ const PostResultItem = ({ result }) => {
                         </h3>
                         <p>Release Date: {result.release_date}</p>
                         <p>Popularity: {result.popularity}</p>
-                        <p>Vote: {result.vote_average}/10</p>
+                        <p>Vote: {result.vote_average.toFixed(1)}/10</p>
                         <p>Vote Count: {result.vote_count}</p>
                     </div>
                 </Link>
@@ -31,26 +31,3 @@ const PostResultItem = ({ result }) => {
     )
 }
 export default PostResultItem
-
-// "adult": false,
-// "backdrop_path": "/jZIYaISP3GBSrVOPfrp98AMa8Ng.jpg",
-// "genre_ids": [
-//     16,
-//     35,
-//     10751,
-//     14,
-//     10749
-// ],
-// "id": 976573,
-// "original_title": "Elemental",
-// "overview": "In a city where fire, water, land and air residents live together, a fiery young woman and a go-with-the-flow guy will discover something elemental: how much they have in common.",
-// "popularity": 4696.546,
-// "poster_path": "/6oH378KUfCEitzJkm07r97L0RsZ.jpg",
-// "release_date": "2023-06-14",
-// "title": "Elemental",
-// "video": false,
-// "vote_average": 7.8,
-// "vote_count": 1050
-
-// const genre = searchParams.genre || 'fetchPopular'
-// const linkTo = mediaType === 'tv' ? `/tv/${result.id}` : `/movie/${result.id}`;
