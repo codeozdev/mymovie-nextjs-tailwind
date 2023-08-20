@@ -1,7 +1,22 @@
+'use client'
+
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+
 import { AiOutlineSearch } from 'react-icons/ai'
 import PaddingContainer from '../layout/padding-container'
 
 const PostSearch = () => {
+    const [search, setSearch] = useState('')
+    const router = useRouter()
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        if (!search) return //eger search bos ise hicbir sey yapma
+        router.push(`/search/${search}`) //ama data varsa search sayfasina gidiyoruz
+        setSearch('')
+    }
+
     return (
         <PaddingContainer>
             <div className='flex flex-col justify-center items-center'>
@@ -12,17 +27,21 @@ const PostSearch = () => {
                         movie or TV series you are looking for.
                     </p>
                 </div>
-                <div className='relative flex items-center p-2 bg-neutral-900 rounded-lg max-w-[350px]  md:max-w-[600px]  py-3'>
+                <form
+                    className='relative flex items-center p-2 bg-neutral-900 rounded-lg max-w-[350px]  md:max-w-[600px]  py-3'
+                    onSubmit={handleSubmit}>
                     <input
                         type='text'
                         className='bg-transparent outline-none placeholder:text-neutral-600 w-screen'
                         placeholder='Search Movie or TV-Show'
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
                     />
                     <AiOutlineSearch
                         className='absolute right-2 text-neutral-600'
                         size={20}
                     />
-                </div>
+                </form>
             </div>
         </PaddingContainer>
     )
