@@ -82,20 +82,3 @@ const MoviePage = async ({ params }) => {
     )
 }
 export default MoviePage
-
-///https://api.themoviedb.org/3/movie/976573/credits
-
-// {
-//     "adult": false,
-//     "gender": 1,
-//     "id": 1087262,
-//     "known_for_department": "Acting",
-//     "name": "Leah Lewis",
-//     "original_name": "Leah Lewis",
-//     "popularity": 26.025,
-//     "profile_path": "/liV9OXUeo7T19hhjFlqTELtETnW.jpg",
-//     "cast_id": 5,
-//     "character": "Ember Lumen (voice)",
-//     "credit_id": "631bd27f65e0a200893de33e",
-//     "order": 0
-// },
